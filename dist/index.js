@@ -7,7 +7,7 @@ function ValidateZod(schema, raw, validationErrKind) {
     if (result.success)
         return (0, std_lib_1.Ok)(result.data);
     const err = (0, std_lib_1.Whoops)(validationErrKind)
-        .ctx("At zod validation.")
+        .context("At zod validation.")
         .reason(formatZodMsg(result.error))
         .build();
     return (0, std_lib_1.Err)(err);

@@ -11,7 +11,7 @@ export function ValidateZod<T extends Zod.ZodTypeAny, ErrorType extends {}>(
   if (result.success) return Ok(result.data);
 
   const err = Whoops(validationErrKind)
-    .ctx("At zod validation.")
+    .context("At zod validation.")
     .reason(formatZodMsg(result.error))
     .build();
 
